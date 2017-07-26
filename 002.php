@@ -6,9 +6,9 @@
 $Array = array(1, 20, 15, 17, 24, 35);
 $cell = 0;
 $result = 0;
-foreach ($Array as $Array[$cell]) {
+foreach ($Array as $cell) {
 
-    $result += $Array[$cell];
+    $result += $cell;
 }
 
 echo $result . "\n";

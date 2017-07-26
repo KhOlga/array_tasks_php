@@ -5,18 +5,22 @@
 # После вывести на экран элементы, которые больше ноля и у которых не парный индекс.
 
 $Array = array();
+$newArray = array();
 
 for($i = 0; $i <= 10; $i++) {
     $Array[$i] = rand(1, 100);
-}
 
-foreach($Array as $key => $value) {
-    if($value > 0 && ($key % 2) == 0) {
-        echo "[" . $key . "]" . " => " . $value . "\n";
+    if($Array[$i] > 0 && ($i % 2) == 0) {
+
+        echo "[" . $i . "]" . " => " . $Array[$i] . "\n";
+
+        $newArray[] = $Array[$i];
     }
+
 }
 
-echo "\n";
+$result = array_product($newArray);
+echo "\n" . $result . "\n\n";
 
 foreach($Array as $key => $value) {
     if($value > 0 && ($key % 2) != 0) {

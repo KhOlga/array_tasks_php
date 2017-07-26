@@ -5,7 +5,7 @@
 
 $n = 1000;
 $num = 0;
-for ($i = 1000, $counter=1; $i > 1; $i--, $counter++) {
+for ($i = 1000, $counter = 1; $i > 1; $i--, $counter++) {
     $n /= 2;
 
     if($n > 50) {
@@ -16,7 +16,7 @@ for ($i = 1000, $counter=1; $i > 1; $i--, $counter++) {
         echo "$n < 50 \n";
         break;
     }
-    $num = $counter;
+    $num = $counter+1;
 }
  echo $num . "\n";
 

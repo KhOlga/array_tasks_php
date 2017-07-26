@@ -5,40 +5,47 @@
 $Array = array();
 for($i = 0; $i <= 5; $i++) {
     $Array[$i] = rand(7, 96);
-}
+} # заповнила масив
+print_r($Array) . "\n\n"; # вивела в консоль
 
+$min = min($Array);
+$max = max($Array);
 
-for($i = 0; $i <= count($Array); $i++) {
-
-    if ($Array[$i] >= $Array[0]) {
-            $max = $Array[$i];
-            $keyMax = $i;
-        }
-}
-
-echo $keyMax . " - " . $max . "\n";
-
-for($i = 0; $i < count($Array); $i++) {
-
-    if ($Array[$i] <= $Array[0]) {
-        $min = $Array[$i];
-        $keyMin = $i;
-    }
-}
-
-echo $keyMin . " - " . $min . "\n";
+echo "Min number " . $min . "\n";
+echo "Max number " . $max . "\n\n";
 
 foreach ($Array as $key => $value) {
-    if ($key == $keyMin) {
-        $Array[$i] = $max;
+    if($value == $min) {
+        $keyMin = $key;
+        echo $keyMin . "=>" . $value . "\n";
     }
 
-    if ($key == $keyMax) {
-        $Array[$i] = $min;
+    if($value == $max) {
+        $keyMax = $key;
+        echo $keyMax . "=>" . $value . "\n";
     }
 
 }
 
-print_r($Array) . "\n";
+
+foreach ($Array as $key => $value) {
+
+    if($key == $keyMin) {
+        $value = $max;
+        echo $key . "=>" . $value . "\n";
+    }
+
+    if($key == $keyMax) {
+        $value = $min;
+        echo $key . "=>" . $value . "\n";
+    }
+
+}
+
+echo "\n";
+print_r($Array) . "\n"; # виводить масив в тому ж вигляді, що і до перестановки місцями мінімального та максимального значень. Не виходить це виправити.
+
+
+
 
 ?>
