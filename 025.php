@@ -17,12 +17,12 @@ echo "Max number " . $max . "\n\n";
 foreach ($Array as $key => $value) {
     if($value == $min) {
         $keyMin = $key;
-        echo $keyMin . "=>" . $value . "\n";
+
     }
 
     if($value == $max) {
         $keyMax = $key;
-        echo $keyMax . "=>" . $value . "\n";
+
     }
 
 }
@@ -31,21 +31,19 @@ foreach ($Array as $key => $value) {
 foreach ($Array as $key => $value) {
 
     if($key == $keyMin) {
-        $value = $max;
-        echo $key . "=>" . $value . "\n";
+        $Array[$keyMin] = $max;
+
     }
 
     if($key == $keyMax) {
-        $value = $min;
-        echo $key . "=>" . $value . "\n";
+        $Array[$keyMax] = $min;
+
     }
 
 }
 
 echo "\n";
 print_r($Array) . "\n"; # виводить масив в тому ж вигляді, що і до перестановки місцями мінімального та максимального значень. Не виходить це виправити.
-
-
 
 
 ?>
